@@ -1,0 +1,29 @@
+@use 'helpers' as *;
+
+body {
+  overflow-x: hidden !important;
+  font-family: var(--font-family), sans-serif;
+}
+
+html{
+  overflow-x: hidden !important;
+}
+html, body {
+  scrollbar-gutter: auto !important;
+}
+.container{
+  max-width: 1216px;
+  margin-inline: auto;
+}
+a{
+  text-decoration: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+a{
+  user-select: none;
+}

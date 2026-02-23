@@ -1,0 +1,361 @@
+.overview {
+  min-height: 100vh;
+  position: relative;
+  background: var(--color-beige-100);
+  padding-bottom: 32px;
+
+  &__main {
+    margin-left: 300px;
+    transition: margin-left 0.5s ease;
+    padding: 32px 40px;
+  }
+
+  &.minimized {
+    .overview__main {
+      margin-left: 88px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--color-grey-900);
+    margin-bottom: 32px;
+  }
+
+  &__balance-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__card {
+    padding: 24px;
+    border-radius: 12px;
+
+    &--dark {
+      background-color: var(--color-grey-900);
+      color: var(--color-white);
+    }
+
+    &--light {
+      background-color: var(--color-white);
+      color: var(--color-grey-900);
+    }
+
+    &-label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 11px;
+      color: inherit;
+    }
+
+    &-amount {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: inherit;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__section {
+    background-color: var(--color-white);
+    padding: 32px;
+    border-radius: 12px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 120%;
+      color: var(--color-grey-900);
+    }
+  }
+
+  &__see-details {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+      color: var(--color-grey-900);
+    }
+  }
+
+  &__pots {
+    &-content {
+      display: flex;
+      gap: 20px;
+    }
+
+    &-total {
+      display: flex;
+      gap: 16px;
+      padding-right: 20px;
+      border-right: 1px solid var(--color-grey-100);
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &-label {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--color-grey-500);
+      margin-bottom: 4px;
+    }
+
+    &-amount {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: var(--color-grey-900);
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+  }
+
+  &__pot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__pot-name {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+  }
+
+  &__pot-amount {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-900);
+  }
+
+  &__transactions {
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__tx-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-grey-100);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__tx-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__tx-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__tx-name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-900);
+  }
+
+  &__tx-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  &__tx-amount {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+
+    &--income {
+      color: var(--color-green);
+    }
+
+    &--expense {
+      color: var(--color-grey-900);
+    }
+  }
+
+  &__tx-date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+  }
+
+  &__budgets {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &-chart {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-center {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-spent {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 120%;
+      color: var(--color-grey-900);
+    }
+
+    &-limit {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      color: var(--color-grey-500);
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__budget-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-grey-100);
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__budget-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__budget-color {
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  &__budget-name {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+  }
+
+  &__budget-amount {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-900);
+  }
+
+  @media (width <= 1024px) {
+    padding-bottom: 100px;
+
+    &__main {
+      margin-inline: auto;
+      padding: 24px 32px;
+    }
+
+    &__balance-cards {
+      grid-template-columns: 1fr;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (width <= 768px) {
+    &__main {
+      padding: 24px 16px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__section {
+      padding: 24px 20px;
+    }
+
+    &__pots-content {
+      flex-direction: column;
+    }
+
+    &__pots-total {
+      padding-right: 0;
+      padding-bottom: 20px;
+      border-right: none;
+      border-bottom: 1px solid var(--color-grey-100);
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use '/src/styles/helpers/index' as *;
+
+.transactions-list{
+  margin-top: 24px;
+  &__headers,
+  &__item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 0px;
+  }
+  &__headers{
+    padding: 12px 16px;
+  }
+  &__headers-item-amount{
+    text-align: right;
+  }
+
+  &__rows{
+    margin-top: 24px;
+    padding-inline: 16px;
+  }
+  &__item-info{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img{
+      width: 40px;
+      border-radius: 100%;
+    }
+    h3{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--color-grey-900);
+    }
+  }
+  &__item-category, &__item-date{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+  }
+
+  &__item-amount{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+
+    &.income{
+      color: var(--color-green);
+    }
+    &.expense{
+      color: var(--color-grey-900);
+    }
+  }
+  @media(width <= 768px){
+    &__item {
+      grid-template-columns: auto auto;
+    }
+    &__rows{
+      padding-inline: 0px;
+    }
+  }
+}

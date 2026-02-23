@@ -1,0 +1,53 @@
+.transactions{
+  min-height: 100vh;
+  position: relative;
+  background: var(--color-beige-100);
+  padding-bottom: 32px;
+  &__main{
+    margin-left: 300px;
+    transition: margin-left 0.5s ease;
+    padding-bottom: 100px;
+  }
+  &__title{
+    margin-left: 40px;
+    font-family: var(--font-family), sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: var(--color-grey-900);
+    padding-top: 32px;
+  }
+  &__transactions-module{
+    margin: 32px 40px 0px 40px;
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  &__error{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &.minimized{
+    .transactions__main{
+      margin-left: 88px;
+    }
+  }
+
+  @media(width <= 1024px){
+    &__main{
+      margin-inline: auto;
+    }
+  }
+
+  @media(width <= 768px){
+    &__transactions-module{
+      margin-inline: 16px;
+      padding-inline: 20px;
+    }
+    &__title{
+      margin-left: 16px;
+    }
+  }
+}

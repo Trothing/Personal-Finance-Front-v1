@@ -1,0 +1,225 @@
+.budget-element{
+  background-color: var(--color-white);
+  padding: 32px;
+  border-radius: 12px;
+
+  &__header{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    div{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    &-color{
+      border-radius: 100%;
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__header-left{
+    position: relative;
+  }
+  &__control{
+    align-self: center;
+  }
+  &__control-modal{
+    display: none !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    translate: 0 30%;
+    z-index: 1001;
+    width: fit-content;
+    padding: 12px 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.25);
+
+    &.active{
+      display: block !important;
+    }
+  }
+  &__edit{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-900);
+    text-wrap: nowrap;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-grey-100);
+    width: 100%;
+    text-align: left;
+  }
+  &__delete{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-red);
+    text-wrap: nowrap;
+    padding-top: 12px;
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--color-grey-900);
+  }
+  &__maximum{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+    margin-top: 20px;
+  }
+  &__progress-bar{
+    margin-top: 16px;
+  }
+  &__money{
+    display: flex;
+    margin-top: 16px;
+    div{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-left: 20px;
+
+      &::before{
+        content: '';
+        height: 100%;
+        width: 4px;
+        position: absolute;
+        left: 0;
+        border-radius: 8px;
+      }
+    }
+    &_spent{
+      &::before{
+        background-color: var(--color-green);
+      }
+      &-text{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--color-grey-500);
+      }
+      &-amount{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        color: var(--color-grey-900);
+      }
+    }
+    &_remaining{
+      &::before{
+        background-color: var(--color-beige-100);
+      }
+      &-text{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--color-grey-500);
+      }
+      &-amount{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 150%;
+        color: var(--color-grey-900);
+      }
+    }
+  }
+  &__last-spending{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--color-beige-100);
+    border-radius: 12px;
+
+    &-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &-title{
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      color: var(--color-grey-900);
+    }
+    &-see-all{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--color-grey-500);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+  }
+  &__transactions{
+    margin-top: 20px;
+  }
+  &__tx-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child){
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-grey-500);
+    }
+
+    &:not(:first-child){
+      padding-top: 12px;
+    }
+  }
+  &__tx-info{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    img{
+      border-radius: 100%;
+      width: 32px;
+      height: 32px;
+    }
+    span{
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 150%;
+      color: var(--color-grey-900);
+    }
+  }
+  &__tx-other-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: right;
+  }
+  &__tx-amount{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: right;
+    color: var(--color-grey-900);
+  }
+  &__tx-date{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+  }
+  @media (width <= 768px) {
+    padding: 24px 20px;
+    &__tx-info{
+      img{
+        display: none;
+      }
+    }
+    &__last-spending{
+      padding: 16px;
+    }
+  }
+}

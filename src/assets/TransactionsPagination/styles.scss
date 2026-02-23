@@ -1,0 +1,207 @@
+@use '/src/styles/helpers/index' as *;
+
+.transactions-pagination{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  margin-top: 24px;
+
+  &__button{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-white);
+  }
+
+  &__button--next, &__button--prev{
+    color: var(--color-grey-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    height: 40px;
+    padding-inline: 16px;
+    border: 1px solid var(--color-beige-500);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: var(--font-family), sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    svg {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+    }
+
+    @include hover(){
+      background: var(--color-beige-500);
+      color: var(--color-white);
+    }
+  }
+
+  &__numbers{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__number{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-beige-500);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: var(--font-family), sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-900);
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &--active{
+      color: var(--color-white);
+      background: var(--color-grey-900);
+      border-color: var(--color-grey-900);
+    }
+
+    @include hover(){
+      background: var(--color-beige-500);
+      color: var(--color-white);
+    }
+  }
+
+  &__ellipsis{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family), sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-grey-500);
+    user-select: none;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  @media (width <= 768px) {
+    padding-top: 20px;
+    margin-top: 20px;
+
+    &__button--next, &__button--prev{
+      height: 38px;
+      padding-inline: 14px;
+      gap: 12px;
+      font-size: 13px;
+
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    &__numbers{
+      gap: 6px;
+    }
+
+    &__number{
+      width: 38px;
+      height: 38px;
+      font-size: 13px;
+    }
+
+    &__ellipsis{
+      width: 38px;
+      height: 38px;
+      font-size: 13px;
+    }
+  }
+
+  @media (width <= 480px) {
+    padding-top: 16px;
+    margin-top: 16px;
+    gap: 8px;
+
+    &__button--next, &__button--prev{
+      height: 36px;
+      padding-inline: 10px;
+      gap: 8px;
+      font-size: 12px;
+      min-width: 36px;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &__numbers{
+      gap: 6px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    &__number{
+      width: 36px;
+      height: 36px;
+      font-size: 12px;
+    }
+
+    &__ellipsis{
+      width: 28px;
+      height: 36px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (width <= 360px) {
+    padding-top: 12px;
+    margin-top: 12px;
+    gap: 6px;
+
+    &__button--next, &__button--prev{
+      height: 32px;
+      padding-inline: 8px;
+      min-width: 32px;
+      gap: 6px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &__numbers{
+      gap: 4px;
+    }
+
+    &__number{
+      width: 32px;
+      height: 32px;
+      font-size: 11px;
+    }
+
+    &__ellipsis{
+      width: 24px;
+      height: 32px;
+      font-size: 11px;
+    }
+  }
+}
+
