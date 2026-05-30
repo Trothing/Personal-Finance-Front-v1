@@ -203,7 +203,7 @@ const Transactions = () => {
 
                     {loading && (
                         <div className="transactions__loader">
-                            <div className="spinner">Loading...</div>
+                            {/*<div className="spinner">Loading...</div>*/}
                         </div>
                     )}
 

@@ -3,7 +3,6 @@ import Overview from "./pages/Overview";
 import Transactions from "./pages/Transactions";
 import Budgets from "./pages/Budgets";
 import Pots from "./pages/Pots";
-import RecurringBills from "./pages/RecurringBills";
 import { AnimatePresence } from "framer-motion";
 import './styles/style.scss'
 import Register from "./pages/Register";

@@ -135,7 +135,8 @@ const BudgetElement = ({ budget, Colors, onEdit, onDelete}: BudgetProgressBarPro
                     </button>
                 </div>
                 {isLoading ? (
-                    <p>Loading...</p>
+                    /*<p>Loading...</p>*/
+                    <p></p>
                 ) : (
                     <div className="budget-element__transactions">
                         {

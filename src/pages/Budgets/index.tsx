@@ -16,7 +16,7 @@ import BudgetModal from "../../components/BudgetModal";
 import ConfirmDeleteModal from "../../components/ConfirmDeleteModal";
 import {useNavbar} from "../../hooks/useNavbar.ts";
 
-export const Colors = [
+const Colors = [
     { "name": "Deep Space Blue", "value": "#1B263B" },
     { "name": "Crimson Red", "value": "#DC143C" },
     { "name": "Emerald Green", "value": "#50C878" },
@@ -159,7 +159,7 @@ const Budgets = () => {
 
                     {loading && (
                         <div className="budgets__loader">
-                            <div className="spinner">Loading...</div>
+                            {/*<div className="spinner">Loading...</div>*/}
                         </div>
                     )}
 
